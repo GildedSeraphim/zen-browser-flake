@@ -85,7 +85,8 @@
       downloadData = downloadUrl."${variant}";
     in
       pkgs.stdenv.mkDerivation {
-        name = "zen-browser";
+        inherit version;
+        pname = "zen-browser";
 
         src = builtins.fetchTarball {
           url = downloadData.url;
